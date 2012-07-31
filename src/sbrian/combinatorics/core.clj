@@ -34,24 +34,18 @@
 (defn chance-that-on-n-choose-k-avoid-s-of-t [n k t s]
   "There are interesting aspects to this.
   For example, when choosing 200 items from 2000 items, the chance of avoiding
-  exactly 100 out of a group of 100 is much better than the change of avoiding
+  exactly 100 out of a group of 100 is much better than the chance of avoiding
   exactly 1 out of that group of 100"
   (/ (n-choose-k-avoid-s-of-t n k t s)
      (n-choose-k n k)))
 
 (defn chance-that-on-n-choose-k-avoid-at-least-s-of-t [n k t s]
-  "There are interesting aspects to this.
-  For example, when choosing 200 items from 2000 items, the chance of avoiding
-  exactly 100 out of a group of 100 is much better than the change of avoiding
-  exactly 1 out of that group of 100"
   (/ (n-choose-k-avoid-at-least-s-of-t n k t s)
      (n-choose-k n k)))
 
 (comment
- 
   (float (chance-that-on-n-choose-k-avoid-at-least-s-of-t 20000 50 2000 1950))
-  
   "This means when selecting 50 from 20000 I miss anywhere from exactly 50 of 2000
-   to exactly 0 of 2000, which covers every possibility and gives 100%"
-   
-)
+   to exactly 0 of 2000, which covers every possibility and gives 100%")
+
+
