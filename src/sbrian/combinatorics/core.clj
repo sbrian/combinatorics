@@ -46,6 +46,38 @@
 (comment
   (float (chance-that-on-n-choose-k-avoid-at-least-s-of-t 20000 50 2000 1950))
   "This means when selecting 50 from 20000 I miss anywhere from exactly 50 of 2000
-   to exactly 0 of 2000, which covers every possibility and gives 100%")
+   to exactly 0 of 2000, which covers every possibility and gives 100%"
+  
+  (reduce + (map #(float (chance-that-on-n-choose-k-avoid-s-of-t 20000 1000 2000 %))
+                 (range 1880 1921)))
+  "This calculates the chance that when picking 1000 from 20000, I will get 80 to 120
+   from a group of 2000, putting me at 2% margin of error.  Result 0.97353363"
+  
+  (reduce + (map #(float (chance-that-on-n-choose-k-avoid-s-of-t 20000 500 2000 %))
+                 (range 1940 1961)))
+  "This calculates the chance that when picking 500 from 20000, I will get 40 to 60
+   from a group of 2000, putting me at 2% margin of error.  Result 0.8877281"
+ 
+  (reduce + (map #(float (chance-that-on-n-choose-k-avoid-s-of-t 20000 100 2000 %))
+                 (range 1988 1993)))
+  "This calculates the chance that when picking 100 from 20000, I will get 8 to 12
+   from a group of 2000, putting me at 2% margin of error.  Result 0.59694666"
+  
+  (reduce + (map #(float (chance-that-on-n-choose-k-avoid-s-of-t 20000 200 2000 %))
+                 (range 1972 1989)))
+  "This calculates the chance that when picking 200 from 20000, I will get 12 to 28
+   from a group of 2000, putting me at 4% margin of error.  Result 0.9571556"
+  
+  (reduce + (map #(float (chance-that-on-n-choose-k-avoid-s-of-t 20000 200 2000 %))
+                 (range 1970 1991)))
+  "This calculates the chance that when picking 200 from 20000, I will get 10 to 30
+   from a group of 2000, putting me at 5% margin of error.  Result 0.987409"
+  
+  (reduce + (map #(float (chance-that-on-n-choose-k-avoid-s-of-t 20000 50 2000 %))
+                 (range 1993 1998)))
+  "This calculates the chance that when picking 50 from 20000, I will get 3 to 7
+   from a group of 2000, putting me at 4% margin of error.  Result 0.76669806"
+  
+)
 
 

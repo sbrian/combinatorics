@@ -1,0 +1,3 @@
+#Mon Jul 30 22:53:59 PDT 2012
+cmdhistory=["(System.err/print \\"hi\\")" "(System/err println \\"hi\\")" "(n-choose-k 3 2)" "(use 'sbrian.combinatorics.core \:reload)"]
+eclipse.preferences.version=1
